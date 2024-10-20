@@ -15,7 +15,7 @@ const ViewProfile = () => {
     <Container maxWidth="sm">
       <Box sx={{ mt: 5, p: 3, boxShadow: 3, borderRadius: 2, textAlign: 'center' }}>
         <Avatar 
-          alt={user.name} 
+          alt={user.user.name} 
           sx={{ width: 100, height: 100, margin: 'auto', mb: 2 }}
         >
         </Avatar>
@@ -23,10 +23,10 @@ const ViewProfile = () => {
           {user.name}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          <strong>Email: </strong>{user.email}
+          <strong>Email: </strong>{user.user.email}
         </Typography>
         <Typography variant="body1" gutterBottom>
-          <strong>Phone: </strong>{user.phone}
+          <strong>Phone: </strong>{user.user.phone}
         </Typography>
       </Box>
     </Container>

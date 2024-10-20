@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkUserSession } from './userSlice';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, redirect, useNavigate } from 'react-router-dom';
 import SignUp from './component/SignUp';
 
 import HomePage from './component/HomePage';
@@ -24,6 +24,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        
+        <Route path="/" element={<Login/>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/homepage" element={user ? <HomePage  /> : <Navigate to="/login" />} />
